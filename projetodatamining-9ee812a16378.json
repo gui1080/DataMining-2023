@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "projetodatamining",
+  "private_key_id": "9ee812a1637871a1f912234f44fe394423e06bf1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCT2NvPMD5Rqnqz\nzWINPOZN+RQ5vyqzEhaSS/1lL8WmLW5kYlH0WYbepavjexcSBfcpGWwXbPPNXokk\n01/nkqCg4zS/A/dRpn5vmwOTqrxDrMAkMTPSYQaA4oWqSsuOOj2g+ZkF1yzuSAoP\n2zxh+yaICbXZxhSvhcBcoxhMkw+5doTnV7olOzSbdzBxaSo998ysogsEh+dLCH+L\n5y6RCOCwHCMgfoDUwb/fG/lF9JQ1NWF9Y8Ji5L+IDaR3cn/E16Kt3PenxroZxpK4\nzCcmvSDq4O5xw5HEytoIvfpScrlTDjD7KCDVjxS1q2JfHDqD3tkf1hy5qAQhfo0q\n2wsMDsyXAgMBAAECggEAOMCk1+p38ZdUVJLBUb2P1lyHhAc619RYr73VvjLRVxHX\nb1dCiF6ZY/wKeF72oyeBEdi9YlyjVbE1SdqN1PG3EStGQxC9ri0QGb1SaSu/6uZ0\nNzBf6SDvgyfxEUZ2ztjScWl+cPyBNdKXcjDBBAeJaez4Tmk35YydI7JDkJlfDty3\nOtp+GA9KVahUF+ScT0D/RNYFrbgzW8gebaIJrQiqnuKRoUhrAeWnGumnZqgF85cO\nn6qbJQa6zhTmSLrluFL2ONAYI0BScv/6duiOMnWWpS53HoEWxmT9v5BSHgK7VcVE\nhgkUkJ5SZuUn+YXJ0Y/FKQh0PezsWX2Yca3gj5+eSQKBgQDQuFUdU9tPu2Qp12WZ\nOb5BYy19Gpj4sqdph5JCBBTvBm4/CqMUv0fwr2F/ua7rRMlot89bMgoQOtDMFCv4\nCukBj/cV62gaufbK48YAM7wPgpvTGMKXJNniAwlsXLClh6MVXi8GTfcUtryCiDr0\nT4At8SWBkVHf0NXbBJatwCab6wKBgQC1VoGmxk8rs5FIerm3bCZtlak9rYyzjcAj\nhetnq6FeVn94+SuTiyfXQrBd4tsuZw35Fw6uU1JrHRZgO3RhC3ImWsx2X9/aERMp\ndnUXQe6gutE6hHGGFU33ejC5+nifbQTQlO2EYmvv8igLhLh5jLE66/V+1Wjp+Kgb\nOZvI6e4DBQKBgQDFfMS8PS4T4SFDHdW6B5LnV6og51u6ZYBWL7rJ0Abmq1UBPVVV\nOjAdojREoDLL1YglF1aR2WUAOkZ58tQvnFMf8VI/YUBdmXvUOXSNmGXm3xQFxzXH\nwUyPt4PhDkruNMqwWy9vbbHN3aG8eJ4fsGF+FuAAGro3ZegTleHkgR2HBQKBgHvg\nZp1pZ3gxKRRcUjZNOUsvK/gocK/QK+uYdqHRi2EIsfgQL4aRT1wsAJOCf7yJRfBd\noffQj8MAkeKXev84dHhjGr3a7O7pLy/p7j8/GSbPuFLDW1H/h82BuXuy8Wfnb5yV\nwFPpcFbwFA8aUXMne4MG4iQM4ajD5wMCLbvoomGJAoGAXCE0CgfcaJzOrZzSDSby\nIb6eZGtSTvk/RfQURm+XVLS6QOuMlEjwIVOutZzeGFWniJUnfr2HgYBbjJ6mZZJU\npVM5WQEhFSuxJyCFU9WG0Pvp66QyUSFPjL57shcmuBSX0h3SuL4ip/BXqqR+WT/K\n/JuJrTrEiP+W4gdVieLVAkE=\n-----END PRIVATE KEY-----\n",
+  "client_email": "conta-servi-o-dm@projetodatamining.iam.gserviceaccount.com",
+  "client_id": "107585971198910805270",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/conta-servi-o-dm%40projetodatamining.iam.gserviceaccount.com"
+}
