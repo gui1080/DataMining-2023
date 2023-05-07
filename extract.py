@@ -4,6 +4,7 @@ import pandas as pd
 import time
 from upload_vars import UPLOAD_TEST, UPLOAD_CNPJ, CNPJ_working_directory, UPLOAD_CEIS, CEIS_working_directory, UPLOAD_CEPIM, CEPIM_working_directory
 from upload_vars import UPLOAD_PEP, PEP_working_directory, UPLOAD_CNEP, CNEP_working_directory, UPLOAD_CEAF, CEAF_working_directory, UPLOAD_Leniencia, Leniencia_working_directory
+from upload_vars import UPLOAD_Benef, Benef_working_directory
 from upload import upload_file
 
 # Definindo Dataset de Teste!
@@ -22,7 +23,7 @@ table_id = 'tableTEST'
 # Credenciais dos dados
 # ------------------
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'projetodatamining-9ee812a16378.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'projetodatamining-b682ac1b63ad.json'
 
 client = bigquery.Client()
 
@@ -188,5 +189,44 @@ if UPLOAD_Leniencia == 1:
 
 # ------------------------------------------------------
 
+if UPLOAD_Benef == 1:
+
+    os.chdir(Benef_working_directory)
+
+    for root, dirs, files in os.walk(Benef_working_directory):
+        for file in files:
+
+            file_path = os.path.join(root, file)
+            
+            if ".csv" in file:
+
+                print("Lendo - " + str(file))
+                # esse encoding inclui acentos
+                df = pd.read_csv(file_path, sep=';', encoding="ISO-8859-1", on_bad_lines='skip')
+                df = df.astype(str)
+                '''
+                
+                elif "SeguroDefeso" in str(file):
+                    upload_file(df, client, "datasetBeneficiosSociais", "tableSeguroDefeso")
+
+                elif "BPC" in str(file):
+                    upload_file(df, client, "datasetBeneficiosSociais", "tableBenefPrestacaoContinuada")
+                
+                elif "AuxilioBrasil" in str(file):
+                    upload_file(df, client, "datasetBeneficiosSociais", "tableAuxilioBrasil")
+                
+                '''
+
+                if "AuxilioEmergencial" in str(file):
+                    upload_file(df, client, "datasetBeneficiosSociais", "tableAuxilioEmergencial")
+
+                if "GarantiaSafra" in str(file):
+                    upload_file(df, client, "datasetBeneficiosSociais", "tableGarantiaSafra")
+
+                '''
+                
+                elif "PETI" in str(file):
+                    upload_file(df, client, "datasetBeneficiosSociais", "tablePETI")
+                '''
 
 # ------------------------------------------------------

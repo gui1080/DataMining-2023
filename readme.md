@@ -6,4 +6,4 @@ Professor Ladeira
 
 Link - https://github.com/gui1080/DataMining-2023
 
-A pasta de datasets foi adicionada ao "gitignore" para não ser upada, junto da jey que se conecta ao Google Big Query.
+A pasta de datasets foi adicionada ao "gitignore" para não ser upada, junto da **key** (arquivo em formato *json*) que se conecta ao Google Big Query.

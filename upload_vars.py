@@ -25,3 +25,6 @@ CEAF_working_directory = '/Users/guilhermebraga/Downloads/DataMining 2023/DM Dat
 
 UPLOAD_Leniencia = 0
 Leniencia_working_directory = '/Users/guilhermebraga/Downloads/DataMining 2023/DM Datasets/6-AcordosLeniencia'
+
+UPLOAD_Benef = 1
+Benef_working_directory = '/Users/guilhermebraga/Downloads/DataMining 2023/DM Datasets/7-Benef Sociais'
