@@ -26,5 +26,11 @@ CEAF_working_directory = '/Users/guilhermebraga/Downloads/DataMining 2023/DM Dat
 UPLOAD_Leniencia = 0
 Leniencia_working_directory = '/Users/guilhermebraga/Downloads/DataMining 2023/DM Datasets/6-AcordosLeniencia'
 
-UPLOAD_Benef = 1
+UPLOAD_Benef = 0
 Benef_working_directory = '/Users/guilhermebraga/Downloads/DataMining 2023/DM Datasets/7-Benef Sociais'
+
+UPLOAD_DividaAtiva = 0
+Divida_working_directory = '/Users/guilhermebraga/Downloads/DataMining 2023/DM Datasets/8-Divida Ativa'
+
+UPLOAD_ComprasNet = 1
+ComprasNet_database_directory = '/Users/guilhermebraga/Downloads/DataMining 2023/DM Datasets/Compranet 2022/compras.db'
