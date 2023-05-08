@@ -25,4 +25,4 @@ def upload_file(df, client, dataset_id, table_id):
         print(job.state)
 
     print(f'{job.output_rows} rows imported to {table_id}')
-    print("FIM UPLOAD DE TABELA")
+    print("\n\nFIM UPLOAD DE TABELA\n\n")

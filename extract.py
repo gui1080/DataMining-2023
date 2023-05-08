@@ -5,7 +5,8 @@ import time
 import sqlite3
 from upload_vars import UPLOAD_TEST, UPLOAD_CNPJ, CNPJ_working_directory, UPLOAD_CEIS, CEIS_working_directory, UPLOAD_CEPIM, CEPIM_working_directory
 from upload_vars import UPLOAD_PEP, PEP_working_directory, UPLOAD_CNEP, CNEP_working_directory, UPLOAD_CEAF, CEAF_working_directory, UPLOAD_Leniencia, Leniencia_working_directory
-from upload_vars import UPLOAD_Benef, Benef_working_directory, UPLOAD_DividaAtiva, Divida_working_directory, UPLOAD_ComprasNet, ComprasNet_database_directory
+from upload_vars import UPLOAD_Benef, Benef_working_directory, UPLOAD_DividaAtiva, Divida_working_directory, UPLOAD_ComprasNet, ComprasNet_database_directory, UPLOAD_CNPJ, CNPJ_database_directory
+
 from upload import upload_file
 
 # Definindo Dataset de Teste!
@@ -264,7 +265,6 @@ if UPLOAD_ComprasNet == 1:
 
     # comprasnet_contratos_anual_contratos_latest
     df = pd.DataFrame(c.fetchall(), columns=["id", "receita_despesa", "numero", "orgao_codigo", "orgao_nome", "unidade_codigo", "unidade_nome_resumido", "unidade_nome", "unidade_origem_codigo", "unidade_origem_nome", "fornecedor_tipo", "fonecedor_cnpj_cpf_idgener", "fornecedor_nome", "codigo_tipo", "tipo", "categoria", "processo", "objeto", "fundamento_legal", "informacao_complementar", "codigo_modalidade", "modalidade", "unidade_compra", "licitacao_numero", "data_assinatura", "data_publicacao", "vigencia_inicio", "vigencia_fim", "valor_inicial", "valor_global", "num_parcelas", "valor_parcela", "valor_acumulado", "situacao"])
-    df = df.astype(str)
     
     time.sleep(1)
     upload_file(df, client, "datasetComprasNet", "tableContratos")
@@ -277,7 +277,6 @@ if UPLOAD_ComprasNet == 1:
     ''')
 
     df = pd.DataFrame(c.fetchall(), columns=["id","contrato_id","tipo","numero","receita_despesa","observacao","mesref","anoref","vencimento","retroativo","valor"])
-    df = df.astype(str)
     
     time.sleep(1)
     upload_file(df, client, "datasetComprasNet", "tableCronogramas")
@@ -290,7 +289,6 @@ if UPLOAD_ComprasNet == 1:
     ''')
 
     df = pd.DataFrame(c.fetchall(), columns=["id","contrato_id","tipo_id","recorrencia_id","descricao_complementar","vencimento","valor"])
-    df = df.astype(str)
     
     time.sleep(1)
     upload_file(df, client, "datasetComprasNet", "tableDespesasAcessorias")
@@ -303,7 +301,6 @@ if UPLOAD_ComprasNet == 1:
     ''')
 
     df = pd.DataFrame(c.fetchall(), columns=["id","unidade","unidade_nome","gestao","numero_empenho","data_emissao","cpf_cnpj_credor","credor","fonte_recurso","naturezadespesa","naturezadespesa_descricao","planointerno","planointerno_descricao","valor_empenhado","valor_aliquidar","valor_liquidado","valor_pago","valor_rpinscrito","valor_rpaliquidar","valor_rpaliquidado","valor_rppago","informacao_complementar","sistema_origem","contrato_id"])
-    df = df.astype(str)
     
     time.sleep(1)
     upload_file(df, client, "datasetComprasNet", "tableEmpenhos")
@@ -312,11 +309,10 @@ if UPLOAD_ComprasNet == 1:
     # comprasnet_contratos_anual_faturas_latest
 
     c.execute('''
-        SELECT * FROM comprasnet_contratos_anual_empenhos_latest
+        SELECT * FROM comprasnet_contratos_anual_faturas_latest
     ''')
 
     df = pd.DataFrame(c.fetchall(), columns=["id","contrato_id","tipolistafatura_id","justificativafatura_id","numero","emissao","prazo","vencimento","valor","juros","multa","glosa","valorliquido","processo","protocolo","ateste","repactuacao","infcomplementar","mesref","anoref","situacao"])
-    df = df.astype(str)
     
     time.sleep(1)
     upload_file(df, client, "datasetComprasNet", "tableFaturas")
@@ -329,7 +325,6 @@ if UPLOAD_ComprasNet == 1:
     ''')
 
     df = pd.DataFrame(c.fetchall(), columns=["id","contrato_id","tipo","valor","vencimento"])
-    df = df.astype(str)
     
     time.sleep(1)
     upload_file(df, client, "datasetComprasNet", "tableGarantias")
@@ -342,7 +337,6 @@ if UPLOAD_ComprasNet == 1:
     ''')
 
     df = pd.DataFrame(c.fetchall(), columns=["id","contrato_id","receita_despesa","numero","observacao","ug","gestao","fornecedor","codigo_tipo","tipo","categoria","processo","objeto","fundamento_legal_aditivo","informacao_complementar","modalidade","licitacao_numero","codigo_unidade_origem","nome_unidade_origem","data_assinatura","data_publicacao","vigencia_inicio","vigencia_fim","valor_inicial","valor_global","num_parcelas","valor_parcela","novo_valor_global","novo_num_parcelas","novo_valor_parcela","data_inicio_novo_valor","retroativo","retroativo_mesref_de","retroativo_anoref_de","retroativo_mesref_ate","retroativo_anoref_ate","retroativo_vencimento","retroativo_valor"])
-    df = df.astype(str)
     
     time.sleep(1)
     upload_file(df, client, "datasetComprasNet", "tableHistoricos")
@@ -355,7 +349,6 @@ if UPLOAD_ComprasNet == 1:
     ''')
 
     df = pd.DataFrame(c.fetchall(), columns=["id","contrato_id","tipo_id","grupo_id","catmatseritem_id","descricao_complementar","quantidade","valorunitario","valortotal"])
-    df = df.astype(str)
     
     time.sleep(1)
     upload_file(df, client, "datasetComprasNet", "tableContratosAnuais")
@@ -368,7 +361,6 @@ if UPLOAD_ComprasNet == 1:
     ''')
 
     df = pd.DataFrame(c.fetchall(), columns=["id","contrato_id","doc_formalizacao","informacao_complementar","data_inicio","data_fim","situacao"])
-    df = df.astype(str)
     
     time.sleep(1)
     upload_file(df, client, "datasetComprasNet", "tableContratosAnuaisPrepostos")
@@ -381,7 +373,6 @@ if UPLOAD_ComprasNet == 1:
     ''')
 
     df = pd.DataFrame(c.fetchall(), columns=["id","contrato_id","funcao_id","instalacao_id","portaria","situacao","data_inicio","data_fim"])
-    df = df.astype(str)
     
     time.sleep(1)
     upload_file(df, client, "datasetComprasNet", "tableContratosAnuaisResponsaveis")
@@ -394,10 +385,15 @@ if UPLOAD_ComprasNet == 1:
     ''')
 
     df = pd.DataFrame(c.fetchall(), columns=["id","contrato_id","funcao_id","descricao_complementar","jornada","unidade","custo","escolaridade_id","data_inicio","data_fim","situacao","aux_transporte","vale_alimentacao"])
-    df = df.astype(str)
     
     time.sleep(1)
     upload_file(df, client, "datasetComprasNet", "tableContratosAnuaisTerceirizados")
     time.sleep(1)
+
+# ------------------------------------------------------
+
+UPLOAD_CNPJ 
+CNPJ_database_directory
+
 
 # ------------------------------------------------------
