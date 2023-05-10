@@ -61,33 +61,6 @@ if UPLOAD_TEST == 1:
     print(f'{job.output_rows} rows imported to {table_id}')
     print("FIM UPLOAD DE TABELA TESTES")
 
-
-# ------------------------------------------------------
-
-if UPLOAD_CNPJ == 1:
-
-    print("Dando unzip em todos os arquivos da pasta de CNPJ!")
-    
-    os.chdir(CNPJ_working_directory)
-
-    for file in os.listdir(CNPJ_working_directory):   
-        if zipfile.is_zipfile(file): 
-            with zipfile.ZipFile(file) as item: 
-                item.extractall()  
-                print("Dando unzip em - " + str(file))
-
-    print("Lendo arquivos de CNPJ")
-
-    for file in os.listdir(CNPJ_working_directory):   
-        if not zipfile.is_zipfile(file) and "pdf" not in str(file):
-            
-            print("Lendo - " + str(file))
-            
-            if "EMPRECSV" in file:
-                # esse encoding inclui acentos
-                df = pd.read_csv(file, encoding="ISO-8859-1")
-                upload_file(df, client, "datasetCNPJ", "tableEmpresas")
-
 # ------------------------------------------------------
 
 if UPLOAD_CEIS == 1:
@@ -384,16 +357,81 @@ if UPLOAD_ComprasNet == 1:
         SELECT * FROM comprasnet_contratos_anual_terceirizados_latest
     ''')
 
-    df = pd.DataFrame(c.fetchall(), columns=["id","contrato_id","funcao_id","descricao_complementar","jornada","unidade","custo","escolaridade_id","data_inicio","data_fim","situacao","aux_transporte","vale_alimentacao"])
+    df = pd.DataFrame(c.fetchall(), columns=["k PRIMARY KEY", "v"])
     
     time.sleep(1)
     upload_file(df, client, "datasetComprasNet", "tableContratosAnuaisTerceirizados")
     time.sleep(1)
 
+    c.close()
+    conn.close()
+
 # ------------------------------------------------------
 
-UPLOAD_CNPJ 
-CNPJ_database_directory
+if UPLOAD_CNPJ == 1:
+
+    conn = sqlite3.connect(CNPJ_database_directory)
+
+    '''
+    df = pd.read_sql_query("SELECT * FROM id_search_config", conn)
+    
+    time.sleep(1)
+    upload_file(df, client, "datasetCNPJ", "table_id_search_config")
+    time.sleep(1)
+
+    # ------------------
+
+    df = pd.read_sql_query("SELECT * FROM id_search", conn)
+    
+    time.sleep(1)
+    upload_file(df, client, "datasetCNPJ", "table_id_search")
+    time.sleep(1)
+    '''
+    # ------------------
+    
+    df = pd.read_sql_query("SELECT * FROM id_search_content", conn)
+    
+    time.sleep(1)
+    upload_file(df, client, "datasetCNPJ", "table_id_search_content")
+    time.sleep(1)
+
+    # ------------------
+    
+    df = pd.read_sql_query("SELECT * FROM id_search_data", conn)
+    
+    time.sleep(1)
+    upload_file(df, client, "datasetCNPJ", "table_id_search_data")
+    time.sleep(1)
+
+    # ------------------
+    
+    df = pd.read_sql_query("SELECT * FROM id_search_docsize", conn)
+    
+    time.sleep(1)
+    upload_file(df, client, "datasetCNPJ", "table_id_search_docsize")
+    time.sleep(1)
+
+    # ------------------
+    
+
+    df = pd.read_sql_query("SELECT * FROM id_search_idx", conn)
+    
+    time.sleep(1)
+    upload_file(df, client, "datasetCNPJ", "table_id_search_idx")
+    time.sleep(1)
+
+    # ------------------
+
+
+    df = pd.read_sql_query("SELECT * FROM ligacao", conn)
+    
+    time.sleep(1)
+    upload_file(df, client, "datasetCNPJ", "table_ligacao")
+    time.sleep(1)
+
+    # ------------------
+    conn.close()
+
 
 
 # ------------------------------------------------------
