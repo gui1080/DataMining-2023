@@ -36,4 +36,4 @@ UPLOAD_ComprasNet = 0
 ComprasNet_database_directory = '/Users/guilhermebraga/Downloads/DataMining 2023/DM Datasets/Compranet 2022/compras.db'
 
 UPLOAD_CNPJ = 1
-CNPJ_database_directory = '/Users/guilhermebraga/Downloads/DataMining 2023/DM Datasets/0-CNPJ (sqlite)/rede.db.2023-04-08.7z/rede.db'
+CNPJ_database_directory = '/Users/guilhermebraga/Downloads/DataMining 2023/DM Datasets/0-CNPJ (sqlite)/db.7z/rede.db'
